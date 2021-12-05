@@ -14,3 +14,10 @@ Los años, deben ser VALIDOS (esto se comprueba con un método estático boolean
 java.util.Date)
 
 y ya los setters y getters
+
+CLASE DNI:
+
+Constructor con numero y letra normalico.
+
+Pues te permite meter los numeros con letra en el método estático leerDNI(); 
+Comprueba que es válido el DNI introducido (buscar reglas en internet, es un array de letras basicamente, que las asigna según el resto del número del DNI / 23)
