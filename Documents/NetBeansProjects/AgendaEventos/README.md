@@ -25,3 +25,7 @@ CLASE Fecha {
 CLASE Evento {
   //cosas, a esto le faltan métodos chico buenas noche gracias
 }
+
+/* hay mas clases pero que no pongo mañana si buena noche tomar cansione
+  https://youtu.be/IJrKlSkxRHA del yutube que me van saliendo mientras 
+  programo mira tu q apañao */
