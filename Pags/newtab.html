@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New tab</title>
+    <script>
+        var titulo, link;
+        var num = 6; //Cuenta cuantos enlaces hay, empieza en 6
+    
+    let newurl = "";
+        if (history.pushState) {
+          window.history.pushState({ path: "" }, 'title',newurl)
+        } else {
+          window.history.replaceState({ path: "" }, 'title', newurl)
+        }
+
+        function nuevaBtn(title) {
+            if (title.length != 0) {
+                this.titulo = title;
+                this.link = prompt("Enlace para " + titulo);
+                document.getElementById('cont1').innerHTML += '<a class="enlace' + num + '" href="' + link + '" >'+ titulo + '</a>';
+                document.getElementsByClassName('enlace' + num)[0].style = "animation: set1 0.2s backwards linear; display: flex; background: rgba(85, 255, 79, 0.73); vertical-align: middle; text-align: center; justify-content: center; padding-bottom: 15px; margin-bottom: 15px; margin-top: 15px; num++;";
+                num++;
+            } else {
+                alert("No vaaaalido");
+            }
+        }
+    </script>
+    <style>
+        a {
+            color: black;
+        }
+        body {
+            background-color: rgb(255, 255, 255);
+        }
+        @keyframes set1 {
+            from {opacity: 1;}
+            to {opacity: 50%;}
+        }
+        div button {
+            color: white;
+            background-color: black;
+            font-size: 32px;
+            font-family: Georgia;
+            text-align: center;
+            vertical-align: middle;
+        }
+        .bton-anadir {
+            position: absolute;
+            top: 90%;
+            right: 5%;
+            width: 30px;
+            height: 30px;
+            transform: translate(-50%, -50%);
+        }
+        .bton-anadir:hover {
+            animation: set1 0.2s forwards ease;
+        }
+        .contd-menu {
+            font-family: Helvetica;
+            padding-right: 0px;
+            padding: 15px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 100%;
+            max-height: auto;
+            font-size: 61px;
+
+        }
+        .enlace1:hover {
+            animation: set1 0.2s forwards linear;
+        }
+        .enlace1 {
+            animation: set1 0.2s backwards linear;
+            display: flex;
+            background: rgba(227, 180, 39, 0.719);
+            justify-content: center;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+            margin-top: 15px;
+        }
+        .enlace2:hover {
+            animation: set1 0.2s forwards linear;
+        }
+        .enlace2 {
+            animation: set1 0.2s backwards linear;
+            display: flex;
+            background: rgba(210, 39, 30, 0.71);
+            vertical-align: middle;
+            text-align: center;
+            justify-content: center;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+            margin-top: 15px;
+        }
+        .enlace3:hover {
+            animation: set1 0.2s forwards linear;
+        }
+        .enlace3 {
+            animation: set1 0.2s backwards linear;
+            display: flex;
+            background: rgba(5, 130, 255, 0.745);
+            vertical-align: middle;
+            text-align: center;
+            justify-content: center;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+            margin-top: 15px;
+        }
+        .enlace4:hover {
+            animation: set1 0.2s forwards linear;
+        }
+        .enlace4 {
+            animation: set1 0.2s backwards linear;
+            display: flex;
+            background: rgba(234, 18, 194, 0.749);
+            vertical-align: middle;
+            text-align: center;
+            justify-content: center;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+            margin-top: 15px;
+        }
+        .enlace5:hover {
+            animation: set1 0.2s forwards linear;
+        }
+        .enlace5 {
+            animation: set1 0.2s backwards linear;
+            display: flex;
+            background: rgba(85, 255, 79, 0.73);
+            vertical-align: middle;
+            text-align: center;
+            justify-content: center;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+            margin-top: 15px;
+        }
+        .enlace6:hover {
+            animation: set1 0.2s forwards linear;
+        }
+        .enlace7:hover {
+            animation: set1 0.2s forwards linear;
+        }
+        .enlace8:hover {
+            animation: set1 0.2s forwards linear;
+        }
+    </style>
+</head>
+<body>
+    <div id="cont1" class="contd-menu">        <!--Enlaces-->                                             <!--Nombre-en-display-->
+        <a class="enlace1" href="https://educacionadistancia.juntadeandalucia.es/centros/jaen/my/">Moodle Centros</a>    <!--Primer enlace-->
+        <a class="enlace2" href="https://informaticaiesalfonsoxi.es/moodle/">Moodle IES Alfonso XI</a>                   <!--Segundo enlace-->
+        <a class="enlace3" href="https://duckduckgo.com/">DuckDuck GO!</a>                                               <!--Tercer enlace-->
+        <a class="enlace4" href="https://youtube.com/">Youtube</a>                                                       <!--Cuarto enlace-->
+        <a class="enlace5" href="https://web.whatsapp.com/">Whatsapp web</a>                                             <!--Quinto enlace-->
+    </div>
+    <div class="bton-anadir">
+        <button type="button" onclick="nuevaBtn(prompt('Titulo marcador NUEVO'))">+</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2 - Formulario c/ Validacion</title>
+</head>
+<body>
+    <h2>Formulario con validacion</h2>
+    <form action="" method="get">
+        Nombre: <input name="nom1" type="text" maxlength="50" required> <!--El atributo 'required' significa que se requiere ese campo-->
+        <br><br>Apellidos: <input name="nom2" type="text" maxlength="50" required>
+        <br><br>Sexo: <br><input type="radio" name="sx" value="Mujer"> Mujer 
+        <br><input type="radio" name="sx" value="Hombre"> Hombre
+        <br><br>E-mail: <input type="email" name="em">
+        <br><input type="checkbox" name="ofert" checked>Sí, deseo recibir información sobre novedades y ofertas.
+        <br><input type="checkbox" name="cond" required>Declaro haber leído y ACEPTAR las condiciones generales<br>del programa y la normativa sobre protección de datos
+        
+        <br>
+        <br>
+        <button type="submit">ENVIAR</button> 
+    </form>
+</body>
+</html>

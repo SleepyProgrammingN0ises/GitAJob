@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repasando HTML</title>
+    <style>
+        table, th, td {
+            border:2px solid black;
+            border-collapse: collapse;
+        }
+        td {
+            padding: 5px;
+            text-align: center;
+        }
+        .vArriba {
+            display: inline;
+            position: fixed;
+            bottom: 2%;
+            right: 13%;
+            width: 250px;
+            height:45px;
+            text-align: center;
+            font: 18px 'Trebuchet MS';
+            background-color:azure;
+            border: 2px solid gold;
+            border-radius: 15px;
+        }
+    </style>
+</head>
+<body>
+    <header id="up">
+        <h1>Repaso etiquetas HTML</h1>
+        <p>Con algunos ejemplos...</p>
+    </header>
+    <hr>
+    <img style="display:block; float:right; width:44%; height:44%; padding-top:5px;" src="large-flamingos-sample.avif">
+    <p><em><b>Tabla de ejemplos</b></em></p>
+    <br><br>
+    <a class="vArriba" href="#up">VOLVER ARRIBA</a>
+    <table style="display: block; float:left;">
+        <tr>
+            <th>Etiqueta</th>
+            <th>Explicacion</th>
+            <th>Ejemplo</th>
+        </tr>
+        <tr>
+            <td>HEAD</td>
+            <td>Se coloca al principio del documento,<br>
+            contiene información sobre la página, y <br>
+            los enlaces hacia hojas de estilo/scripts.</td>
+            <td>&lt;head&gt;&lt;title&gt;&lt;/title&gt;&lt;/head&gt;</td>
+        </tr>
+        <tr>
+            <td>BODY</td>
+            <td>Esta es la etiqueta de cuerpo, en <br>
+            ella encontraremos toda o la mayoria<br>
+        de la informacion a mostrar en el navegador.</td>
+            <td>&lt;body&gt;&lt;title&gt;&lt;/title&gt;&lt;/body&gt;</td>
+        </tr>
+        <tr>
+            <td>TABLE</td>
+            <td>Genera una tabla; a esta le deberemos añadir<br>
+            los elementos &lt;th&gt;&lt;th&gt; para cada columna<br>
+            que queramos añadir; &lt;tr&gt;&lt;tr&gt; para cada
+            <br>fila; luego, cada campo con &lt;td&gt;&lt;td&gt;</td>
+            <td style="text-align: left;">&lt;table&gt;<br>
+                &nbsp;&nbsp;&lt;tr&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;columna1&lt;/th&gt;
+                <br>&nbsp;&nbsp;&lt;/tr&gt;
+                <br>&nbsp;&nbsp;&lt;tr&gt;
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;dato1&lt;/td&gt;
+            <br>&nbsp;&nbsp;&lt;/tr&gt;<br>
+            &nbsp;&nbsp;&lt;tr&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;dato2&lt;/td&gt;<br>
+            &nbsp;&nbsp;&lt;/tr&gt;
+            &lt;/table&gt;</td>
+        </tr>
+        <tr>
+            <td>P</td>
+            <td>Esta etiqueta representa un párrafo de texto.<br>
+            Deja siempre un espacio antes y después de cualquier<br>
+            elemento.</td>
+            <td>&lt;p&gt;[texto]&lt;/p&gt;</td>
+        </tr>
+        <tr>
+            <td>UL<br>[Unorganized List]</td>
+            <td>Declara una lista sin ordenar (es decir,<br>
+            separada y listada por 'bullet points'. Se<br>
+            agregan o quitan puntos mediante etiq.<br>
+            tipo &lt;li&gt;.</td>
+            <td style="text-align: left;">&lt;ul&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;li&gt;Elemento-1&lt;/li&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;li&gt;Elemento-2&lt;/li&gt;<br>
+                &lt;/ul&gt;</td>
+        </tr>
+        <tr>
+            <td>OL<br>[Organized List]</td>
+            <td>Declara una lista ordenada/enumerada.<br>
+            Al igual que en la anterior, esta se compone<br>
+            de elementos &lt;li&gt;&lt;/li&gt;</td>
+            <td style="text-align: left;">&lt;ol&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;li&gt;Elemento-1&lt;/li&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;li&gt;Elemento-2&lt;/li&gt;<br>
+                &lt;/ol&gt;</td>
+        </tr>
+        <tr>
+            <td>SCRIPT</td>
+            <td>Representa un guión/serie de programas bajo<br>
+            un lenguaje web (generalmente, JavaScript). Lo<br>
+            que coloquemos entre estas etiquetas se </td>
+            <td>&lt;script&gt;&lt;/script&gt;</td>
+            <td><button onclick="saludar()" style="text-align: center;">Probar</button></td>
+        </tr>
+        <!--Colocamos aqui debajo el script-->
+        <script>
+            function saludar() {
+                alert('Ejemplo script!');
+            }
+        </script>
+        <tr>
+            <td>DIV</td>
+            <td>Se emplea para dividir contenidos en partes,<br>
+            generalmente con el fin de aplicarles estilos/<br>
+            organizar estos en partes de la página.</td>
+            <td>&lt;div&gt;Contenido1&lt;/div&gt;</td>
+        </tr>
+        <tr>
+            <td>IMG</td>
+            <td>Este elemento muestra por pantalla una imágen<br>
+            cuyo enlace se dispone con el atributo <b>'src'.</b><br>
+            Se puede omitir/no usa etiqueta de cierre</td>
+            <td>&lt;img src="http../imagen1.png"/&gt;</td>
+        </tr>
+        <tr>
+            <td>H1...H5</td>
+            <td>Cabeceras. Muestran texto de manera más vistosa<br>
+            (H1), y a menor número disminuye su tamaño y énfasis<br>
+            (H2, H3, H4, H5)</td>
+            <td>&lt;h1&gt;Titulo pagina&lt;/h1&gt;<br>
+            &lt;h3&gt;Subtítulo mas pequeño&lt;/h3&gt;<br>
+            &lt;h5&gt;Subtítulo MUY pequeño&lt;/h5&gt;</td>
+        </tr>
+        <tr>
+            <td>TEXTAREA</td>
+            <td>Muestra por pantalla una zona de texto, editable<br>
+            y redimensionable (se puede evitar estas dos mediante<br>
+            el atributo <b>readonly</b>)</td>
+            <td style="text-align:left;">&lt;textarea readonly&gt;<br>textotextotexto,<br>
+                textotexto,<br>
+                textotextotexto<br>&lt;/textarea&gt;</td>
+        </tr>
+        <tr>
+            <td>IFRAME</td>
+            <td>Coloca en una página, una ventana (frame) que<br>
+            accede a otro sitio web/documento, que le especifiquemos<br>
+            [mediante etiqueta <b></b>]</td>
+            <td>&lt;iframe&gt;&lt;/iframe&gt;</td>
+        </tr>
+        <tr>
+            <td>NAV</td>
+            <td>Representa el 'menú principal' de navegación<br>
+            en nuestra página. [Enlaces a diferentes partes<br>
+            de la misma]</td>
+            <td>&lt;nav&gt;&lt;/nav&gt;</td>
+        </tr>
+        <tr>
+            <td>HEADER</td>
+            <td>La información en la parte 'superior' de la<br>
+                página</td>
+            <td>&lt;header&gt;...&lt;/header&gt;</td>
+        </tr>
+        <tr>
+            <td>FOOTER</td>
+            <td>Pie de la página.<br>
+            Normalmente en este se muestran copyright,<br>
+            enlaces importantes...</td>
+            <td>&lt;footer&gt;Copyright...&lt;/footer&gt;</td>
+        </tr>
+        <tr>
+            <td>INPUT</td>
+            <td>Permite al usuario introducir datos.<br>
+                Tiene diversas funciones, segun el atributo<br>
+            <b>type</b> que elijamos (text; email;tel;number)...</td>
+            <td>&lt;input <b>type="text"</b>/&gt;</td>
+        </tr>
+        <tr>
+            <td>BUTTON</td>
+            <td>Es un botón. Como el anterior, tiene <br>
+            diversas funciones segun el <b>type</b>, y<br>
+            se utiliza sobre todo en formularios.</td>
+            <td>&lt;button <b>type="clear"</b>&gt;<br>
+            Texto del boton<br>
+            &lt;/button&gt;</td>
+        </tr>
+        <tr>
+            <td>FIELDSET</td>
+            <td>Genera un cuadro con borde alrededor,<br>
+            en el que podemos introducir elementos<br>
+            y cuyo <b><em>&lt;legend&gt;</em></b> le pone etiqueta.</td>
+            <td>&lt;fieldset&gt;<br>
+            &lt;legend&gt;Titulo campo&lt;/legend&gt;<br>
+            &lt;/fieldset&gt;</td>
+        </tr>
+        <tr>
+            <td>STYLE</td>
+            <td>Referencia a una hoja de estilos <em>'interna'</em><br>
+            que posee las reglas CSS disponibles para los elementos<br>
+            que le indiquemos.</td>
+            <td>&lt;style&gt;&lt;/style&gt;</td>
+        </tr>
+        <tr>
+            <td>LINK</td>
+            <td>Se usa, junto a los atributos <b>rel</b> y<br>
+            <b>href</b> para especificar tanto hojas de estilos<br>
+            como scripts/guiónes <em>'externos'</em> al html.</td>
+            <td>&lt;link <b>rel="stylesheet" <br>
+                href="estilos.css"</b>&gt;&lt;/link&gt;</td>
+        </tr>
+        <tr>
+            <td>SELECT</td>
+            <td>Crea un menú desplegable, en el que <br>
+            colocamos cada opción con etiquetas <br>
+            <em>&lt;option&gt;&lt;/option&gt;</em>, atributo interno <br><b>value</b> que especifica la opción escogida.</td>
+            <td>&lt;select&gt<br>
+                &lt;option&gt;opt1&lt;/option&gt;<br>
+                &lt;option&gt;opt2&lt;/option&gt;
+                <br>&lt;/select&gt;</td>
+        </tr>
+    </table>
+    <div style="display:inline-block; float:left; height:75px; width: 70px;"></div>
+</body>
+</html>

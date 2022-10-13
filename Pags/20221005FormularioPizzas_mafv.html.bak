@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1- Ped. Pizza</title>
+    <style>
+        body {
+            background-image: url(PIZZABIANKO.jpg);
+            background-size: cover;
+            background-color:coral;
+            display: block;
+        }
+        legend {
+            font-family: 'Trebuchet MS';
+            color: green;
+            font-weight:bold;
+            background-color: lightcoral;
+        }
+        fieldset {
+            background-color: aliceblue;
+            border: 4px double green;
+			border-radius: 15px;
+            font-family: Arial;
+        }
+        .enviar {
+            text-align:center;
+			border-radius: 20px;
+			vertical-align: center;
+        }
+        .pizza {
+            float:left;
+            color:blue;
+            width:30%;
+        }
+        .entrega {
+            float:left;
+            color:blue;
+            width:30%;
+        }
+        .instrucciones {
+            width:300px;
+            height:150px;
+        }
+        .pago {
+            text-decoration:solid;
+            color: black;
+            background-color: lightblue;
+            width:30%;
+        }
+        #direct {
+            margin-left:85px;
+            width: 250px;
+        }
+
+        .menu-sup {
+            display:block;
+            height: 30px;
+            width:100%;
+            border-bottom: 4px double limegreen;
+            color:black;
+        }
+        
+        .boton-menu1 {
+            text-align: center;
+            display: inline-block;
+            height: 30px;
+            width:fit-content;
+            background-color: limegreen;
+        }
+
+        .boton-menu1:hover {
+            animation:normal;
+            cursor:pointer;
+            background-color: darkgreen;
+            color: white;
+        }
+        button a {
+            color:black;
+        }
+        a:hover {
+            color:white;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-sup">
+        <nav>
+            <button class="boton-menu1" id="btn1"><a href="ejercicio1.html">Inicio</a></button>
+            <button class="boton-menu1" id="btn2"><a href="compromiso.html">Historia</a></button>
+            <button class="boton-menu1" id="btn3"><a href="contacto.html">Info. de Contacto</a></button>
+        </nav>
+    </div>
+    
+    <h1 style="font-family:'Trebuchet MS'; margin-left:8%; text-align: left; color: white;text-decoration:underline;">Pedido de Pizza</h1>
+    <form method="post" action="enviar.php">
+        <fieldset class="pizza">
+                <legend>La Pizza</legend>
+                <p><b>Ingredientes*</b></p>
+                <input type="checkbox" name="ingrd1">Queso<br>
+                <input type="checkbox" name="ingrd1">Pimiento<br>
+                <input type="checkbox" name="ingrd1">Pimienta<br>
+                <input type="checkbox" name="ingrd1">Cebolla<br>
+
+                <p><b>Tamaño*</b></p>
+                <input type="radio" name="tama1" required>Pequeña
+                <input type="radio" name="tama1" required>Mediana
+                <input type="radio" name="tama1" required>Grande
+        </fieldset>
+        <fieldset class="entrega">
+            <legend>Datos de entrega</legend>
+            Nombre*: <input type="text" placeholder="Nombre" required><br>
+            Direccion*: <input type="text" placeholder="Direccion" required><br>
+            Telefono*: <input type="tel" placeholder="XXXXXXXXX" maxlength="9" required><br>
+            Instrucciones especiales:<br>
+            <textarea class="instrucciones"></textarea>
+
+        </fieldset>
+        <fieldset class="pago">
+            <legend>Método de pago</legend>
+            <select onchange="if(this.value == 'Tarjeta') {document.getElementById('direct').hidden=false; document.getElementById('direct').required=true; } else {document.getElementById('direct').hidden=true; document.getElementById('direct').required=false}">
+                <option>Efectivo</option>
+                <option>Tarjeta</option>
+                <input id="direct" type="text" style="float:right;" placeholder="DIRECCIÓN FACTURACIÓN" hidden="true">
+            </select>
+            
+        </fieldset>
+        <br>
+            <button class="enviar" type="submit"><img style="width:70px; height:70px; text-align:center; vertical-align:middle;" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.emojiterra.com%2Fgoogle%2Fandroid-11%2F512px%2F1f90c.png&f=1&nofb=1&ipt=085e96b176b412557f82ed70c877d0290eb05d9bde89b047d6fdca8aab770c0c&ipo=images">Enviar</button>
+            <button class="enviar" type="reset"><img style="width:35px; height:35px; text-align:center; vertical-align:middle;" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpurepng.com%2Fpublic%2Fuploads%2Fmedium%2Fpurepng.com-recycle-binrecycle-bincomputer-recyclebindustbinrecycleemptysystem-1421526586206ylzjm.png&f=1&nofb=1&ipt=1870c85cea5cb3911cdf4ad631a277adb0727d97573c3a63762aeb6ce967997f&ipo=images">Limpiar</button>
+    </form>
+</body>
+</html>

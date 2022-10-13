@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestro compromiso</title>
+    <style>
+        body {
+            background-image: url(PIZZABIANKO.jpg);
+            background-size: cover;
+            background-color:coral;
+            display: block;
+        }
+        legend {
+            font-family: 'Trebuchet MS';
+            color: green;
+            font-weight:bold;
+            background-color: lightcoral;
+        }
+        fieldset {
+            background-color: aliceblue;
+            border: 4px double green;
+			border-radius: 15px;
+            font-family: Arial;
+        }
+        .enviar {
+            text-align:center;
+			border-radius: 20px;
+			vertical-align: center;
+        }
+        .pizza {
+            float:left;
+            color:blue;
+            width:30%;
+        }
+        .entrega {
+            float:left;
+            color:blue;
+            width:30%;
+        }
+        .instrucciones {
+            width:300px;
+            height:300px;
+        }
+        .pago {
+            text-decoration:solid;
+            color: black;
+            background-color: lightblue;
+            width:30%;
+        }
+        #direct {
+            margin-left:85px;
+            width: 250px;
+        }
+
+        .menu-sup {
+            display:block;
+            height: 30px;
+            width:100%;
+            border-bottom: 4px double limegreen;
+            color:black;
+        }
+        
+        .boton-menu1 {
+            display: inline-block;
+            height: 30px;
+            width:fit-content;
+            background-color: limegreen;
+        }
+
+        .boton-menu1:hover {
+            animation:normal;
+            cursor:pointer;
+            background-color: darkgreen;
+            color: white;
+        }
+        .mensaje-txt {
+            display: inline-flexbox;
+            color: black;
+            padding: 10px;
+            margin: 15px;
+            width:auto;
+            background-color: rgba(95, 158, 160, 45%);
+            border-radius: 30px;
+        }
+        button a {
+            color: black;
+        }
+        a:hover {
+            color:white;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-sup">
+        <nav>
+            <button class="boton-menu1" id="btn1"><a href="ejercicio1.html">Inicio</a></button>
+            <button class="boton-menu1" id="btn2"><a href="compromiso.html">Historia</a></button>
+            <button class="boton-menu1" id="btn3"><a href="contacto.html">Info. de Contacto</a></button>
+        </nav>
+    </div>
+    <div class="mensaje-txt">
+        <h2>Nuestra historia</h2>
+        <p>En pizzerias Ivankai tenemos la misión de proveer a nuestros<br>
+        clientes con las mejores pizzas; con ingredientes <em style="background-color: black;"><em style="color:red">| 100%</em> <em style="color:white">origen</em> <em style="color:green;">italiano |</em></em></p>
+        <img src="teen-pizza-delivery-boy-making-ok-gesture-isolated-white-background-teen-pizza-delivery-boy-making-ok-gesture-107961743-1208756721.jpg" style="width:15%; height:15%;">
+        <img style="height: 35%" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fweb.archive.org%2Fweb%2F20161013004132if_%2Fhttp%3A%2F%2Fmw2.google.com%2Fmw-panoramio%2Fphotos%2Fmedium%2F27389969.jpg&f=1&nofb=1&ipt=034c1c1f9a36ff1df512837e5d5381a52108101fc481fef62428247ea626d80b&ipo=images">
+        <p style="text-align: center;">Nuestra pequeña empresa empezó como un pequeño local al sur de Andalucía,<br>
+        y hoy en día se trata de una de las muchas sucursales que aún poseemos <br>
+        y cuidamos día tras día. La pizza es nuestra unica salvación</p>
+    </div>
+    
+</body>
+</html>
