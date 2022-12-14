@@ -1,0 +1,61 @@
+@import url(https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css);
+
+.login {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    margin-left: 10px;
+}
+p {
+    text-align: center;
+}
+.error1 {
+    color: red;
+    font-size: small;
+}
+.btnNav {
+    background-color: darkgray;
+    border: 2px solid black;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    margin-right: 5px;
+    border-radius: 15px;
+}
+.butonAcc { /*BOTONES DE SELECCION [...] [...] [...] */
+    justify-content: center;
+    align-self: center;
+    min-width: 200px;
+    min-height: 75px;
+    background-color: lightgreen;
+    color: black;
+    font-weight: bold;
+}
+.buton1 {   /*BOTON DE AÑADIR [+] */
+    font-family: "Arial Rounded MT Bold", sans-serif;
+    font-size: large;
+    font-weight: bold;
+}
+.footer1 {
+    position:sticky;
+    left:0;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-color: lightgray;
+    bottom:0;
+    margin-top: 25%;
+}
+.footer1 h2,p {
+    margin-left: 10%;
+}
+.peq {
+    font-size: small;
+}
+.registro1 {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    margin-top: 5px;
+}

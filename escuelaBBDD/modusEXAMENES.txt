@@ -1,0 +1,17 @@
+MODUS EXAMENES
+
+--MOSTRAR Nº Y PREGUNTA
+
+--botones ANTERIOR;SIGUIENTE
+	iteran por un vector de respuestas y otro de preguntas; (en sesión)
+	para ello, se usa (por sesión tb) un contador, y según el botón:
+
+ANTERIOR
+-Decrece el contador [usar ambos arrays en paralelo]
+-Refresca la página
+
+SIGUIENTE
+-Guarda la respuesta en BBDD
+-Actualiza el vector de respuestas
+-Incrementa el contador
+-Refresca la página
