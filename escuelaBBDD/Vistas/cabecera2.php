@@ -3,7 +3,7 @@
     $_SESSION['email'];
     Enlaces al gusto
     -->
-
+<!-- EL USUARIO PROFE Ó ALUMNO TENDRÁ MENOS ACCESO QUE EL ADMIN -->
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
     <div class="container">
@@ -23,11 +23,10 @@
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        OTRAS VISTAS
+                        OPCIONES
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">Profesor</a></li>
-                        <li><a class="dropdown-item" href="#">Alumno</a></li>
+                        <li><a class="dropdown-item" href="#">Recargar</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>

@@ -5,6 +5,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.84.0">
+    <title>Creador exámenes - CREAR PREGUNTA</title>
 </head>
 
 <?php
@@ -13,7 +14,7 @@
     require_once "../conexionBD.php";
 
     $cnx = conexionBD::getConexion();
-
+//PARTE VISUAL
     echo "<br>";
     echo "<h2>Pregunta nueva</h2>";
     echo "<div class='crearPreg'>
@@ -74,13 +75,18 @@
             for ($i = 0;$i<$_REQUEST['numR'];$i++) { //Pasamos por el name un vector con los checkboxes activos
                 $str = "resp" . $i;
                 echo "<input type='checkbox' name='respuestas[]' placeholder='{$str}'/>&nbsp;<input type='text' name='{$str}'";
-                echo "<input type='hidden' name='numResp' value='{$_REQUEST['numR']}'/>";   //Num. respuestas
+                echo "<input type='hidden' name='numResp' value='{$_REQUEST['numR']}'/>";   //... así como el Num. de respuestas posibles
             }
             echo "</form>
             <br><button type='submit' name='anadirResp' value='true'>AÑADIR RESPUESTA</button>";
         }
         echo "</form>";
-
+//Funcionalidad
+/**
+ * INSERTAR PREGUNTAS - Le paso a una función llamada insertarPregunta
+ * un ARRAY con los datos recogidos por el usuario (en esa función, después,
+ * recojo según el tipo de pregunta que sea unos datos u otros de este ARRAY);
+ */
         if (isset($_REQUEST['anadirResp'])) {
             $arrayPregunt['categ'] = $_REQUEST['categ']; //categoria
             $arrayPregunt['pregT'] = $_REQUEST['pregT']; //tipo

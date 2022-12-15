@@ -19,6 +19,11 @@ require_once "../Modelos/controladorAdmin.php";
     </div>
     <div class="acciones1">
         <?php
+        if (isset($_SESSION['profe'])) {
+            include_once "vista_profesor.html";
+        } elseif (isset($_SESSION['alumno'])) {
+            include_once "vista_alumno.html";
+        }
 
         if (isset($_REQUEST['cPreguntas'])) {
             header('Location: crearPregunta.php');

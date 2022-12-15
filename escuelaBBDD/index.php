@@ -1,6 +1,11 @@
 <?php
 session_start();
 ob_start();
+/**
+ * DATOS ADMIN
+ *  email = "admin@root"
+ *  contra = "contra123"
+ */
 ?>
 <head>
     <title>Login - Creador exámenes</title>
@@ -37,12 +42,30 @@ function checkPswrd(mixed $email, mixed $cont, PDOStatement $result) {
                 switch ($val) {
                     case '1':
                         $tipoUser = 1; //Admin
+                    $_SESSION['admin'] = true;
+                    if (isset($_SESSION['profe'])) {
+                        unset($_SESSION['profe']);
+                    } elseif ($_SESSION['alumno']) {
+                        unset($_SESSION['alumno']);
+                    }
                         break;
                     case '2':
                         $tipoUser = 2; //Profe
+                    $_SESSION['profe'] = true;
+                        if (isset($_SESSION['admin'])) {
+                            unset($_SESSION['admin']);
+                        } elseif ($_SESSION['alumno']) {
+                            unset($_SESSION['alumno']);
+                        }
                         break;
                     case '3':
                         $tipoUser = 3; //Alumno
+                    $_SESSION['alumno'] = true;
+                        if (isset($_SESSION['profe'])) {
+                            unset($_SESSION['profe']);
+                        } elseif ($_SESSION['admin']) {
+                            unset($_SESSION['admin']);
+                        }
                         break;
                     default:
                         $tipoUser = null;
@@ -55,11 +78,11 @@ function checkPswrd(mixed $email, mixed $cont, PDOStatement $result) {
     if (!$todoBien) {
         return null;
     }
-    return $tipoUser; // retornara true si los datos de quien ingresa son correctos/se han encontrado
+    return $tipoUser; // retornara el tipo de usuario, si los datos de quien ingresa son correctos/se han encontrado
 }
 
 if (isset($_SESSION['email'])) {
-    //si hemos entrado ya
+    //si hemos entrado ya como usuarios
     header('Location: ./Vistas/escuela.php');
 }
 
@@ -71,14 +94,14 @@ if (isset($_REQUEST['entrar'])) {
         $cont = $_REQUEST['contra'];
         $resultQ = $cnx->query("SELECT email, password, estado FROM usuarios WHERE email LIKE '{$email}'");
 
-        if ($resultQ != null) {
+        if ($resultQ->rowCount() > 0) {
             if (checkPswrd($email, $cont, $resultQ) != null) {
                 $_SESSION['errors'] = "Entrado correctamente!";
                 $_SESSION['email'] = $email;
                 header('Location: ./Vistas/escuela.php');
             } else {
                 echo "<fieldset><legend class='error'>
-                ERROR: DATOS DEL USUARIO INCORRECTOS//NO EN BBDD!!
+                ERROR: DATOS DEL USUARIO NO EN BBDD // INCORRECTOS!!
                 </legend></fieldset>";
             }
         } else {

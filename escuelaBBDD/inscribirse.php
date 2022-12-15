@@ -88,7 +88,7 @@ if (isset($_REQUEST['registro'])) {
 
         $cnx = conexionBD::getConexion();
         if (crearUsuario($datos, $cnx)) {
-            $_SESSION['errors'] = "Usuario CREADO correctamente! Ahora deberás verificarlo";
+            $_SESSION['errors'] = "Usuario CREADO correctamente! Creado como Admin.";
         } else {
             $_SESSION['errors'] = "Error al crear el Usuario!";
         }
