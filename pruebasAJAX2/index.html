@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Prueba AJAX con JS</title>
+</head>
+<body>
+    <div id="texto">
+        <h1>Com-probando AJAX</h1>
+        <form id="form1" action="" method="get">
+        <input type="text" id="nomb1" placeholder="N. de Usuario" required/>
+        <input type="password" id="contra1" placeholder="Contraseña" required/>
+        <button id="enviaContenido" type="button">Consultar con AJAX</button>
+    </form>
+    </div>
+    <div id="result">
+
+    </div>
+    <script>
+        var formAccion = document.getElementById('enviaContenido');
+        formAccion.addEventListener('click', conseguir);
+        var usuario = document.getElementById('nomb1');
+        var contras = document.getElementById('contra1');
+
+        //Returns formatted String
+        function crea_query_string() {
+            var nombre = document.getElementById("nomb1");
+            var password = document.getElementById("contra1");
+            return "nombre=" + encodeURIComponent(nombre.value) +
+                "&password=" + encodeURIComponent(password.value) +
+                "&nocache=" + Math.random();
+        }
+
+        function conseguir() {
+            xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    //En cuanto cargue el fichero, deberemos recoger lo que hemos recibido tras abrir este
+                    let txtDoc = this.responseText;
+                    let texto;
+                    if (txtDoc == "null") {
+                        txtDoc = "La contraseña introducida es incorrecta!";
+                    } else {//si no devuelve NULL el archivo php, lo parseamos con JSON
+                        txtDoc = JSON.parse(txtDoc);
+                        for (let atrib in txtDoc) {
+                            texto += "{ " + atrib + ": " + txtDoc[atrib] + " }";
+                        }
+                        txtDoc = texto;
+                    }
+                    let txto = document.createTextNode(txtDoc);
+                    let parrf = document.createElement('p');
+                    parrf.append(txto);
+                    document.getElementById('result').append(parrf);
+                }
+
+            };
+            xhttp.open('POST', 'procesar.php');//Con esta línea abrimos el fichero, e indicamos cómo pasamos sus datos (métodod POST//GET)
+            xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            let cad = crea_query_string();
+            xhttp.send(cad);
+        }
+    </script>
+</body>
+</html>

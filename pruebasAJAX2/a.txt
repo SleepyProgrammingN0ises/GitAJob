@@ -1,0 +1,3 @@
+{"name": "pepito1", "password", ""}
+
+//un githug a quien menseño a usar github. Soy un capullo
